@@ -1,0 +1,39 @@
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+    <div class="container-fluid">
+ <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item active">
+       <a class="nav-link" href="{% url 'welcome'%}">Home
+         <span class="sr-only">(current)</span>
+       </a>
+     </li>
+     
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">Locations
+       </a>
+       <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+           {% for location in locations %}
+         <a class="dropdown-item" href="{% url 'location' location_name=location.location_name %}"><p>{{location.location_name}}</p></a>
+          {% endfor %}
+       </div>
+     </li>
+   </ul>
+   <!-- Adding a search form  -->
+     <div class="col-sm-4 col-md-4 navbar-right">
+
+       <form class="navbar-form" role="search" action="{% url 'search_image' %}">
+
+         <div class="input-group">
+           <input type="text" class="form-control" placeholder="Search Photo Category" name="image">
+           <div class="input-group-btn">
+             <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+           </div>
+         </div>
+
+       </form>
+     </div>
+     <!-- search form end -->
+ </div>
+</nav>
