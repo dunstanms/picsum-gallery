@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pictures',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mygallery',
-        'USER': 'postgres',
-        'PASSWORD':'test123',
+        'USER': 'stan',
+        'PASSWORD':'ubuntustan',
     }
 }
 

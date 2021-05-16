@@ -1,56 +1,104 @@
-{% extends 'base.html'%}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="../../static/bitmap/img/favicon.png" type="image/png">
+        <title>Personal Photo Gallery</title>
+        <!-- Bootstrap CSS -->
+          <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+      
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        
+        	<div class="container">
+        
+        
+        
+        {% block content %}{% endblock %}
+        <!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
 
- {% block content %}
-   
-     <hr>
-     <div class="container text-center">
-      <h3>Pictures shot in {{location}} </h3>
+  <!-- Footer Elements -->
+  <div class="container">
 
-     </div>
-        <div class="container">
-        <div class="row">
+    <!-- Grid row-->
+    <div class="row">
 
-            {% for image in location_images %}
-                 <div class="col-md-4">
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
 
-                    
-
-                    <div class="card" style="width:auto;">
-                        <img class="card-img-top"  id = "img{{ image.id }}" src="{{image.image.url}}" alt="Card image cap" data-toggle="modal" data-target="#myModal{{ forloop.counter }}">
-
-                     
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3 class="modal-title text-center" id="exampleModalLongTitle"> {{image.image_name}}</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body text-center">
-                                        <p class="card-text">Photo name : {{image.image_name}}.</p>
-                                        <img class="card-img-top" id="img{{image.id}}" src="{{image.image.url}}" alt="Card image cap">
-                                        <p class="card-text">Photo description : {{image.image_description}}.</p>
-                                        <p class="card-text">Shot in : {{image.location}}</p>
-                                        <p class="card-text">Category : {{image.category}}</p>
-	  							<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
-                                <input id="{{image.id}}-url"  class="form-control input-md responsive" type="text" value="{{image.image.url}}">
-                                </div>
-                                        <button type="button" class="button_more btn theme_btn" onclick="copy('#{{image.id}}-url')">Copy Link</button>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
         </div>
+      </div>
+      <!-- Grid column -->
+
     </div>
-    <hr>
-{% endblock %}
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright.
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+        
+        
+  
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script>
+    function copy(element) {
+        $(element).select();
+        document.execCommand("copy");
+    }
+    </script>
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.6/js/mdb.min.js"></script>
+        
+        
+    </body>
+</html>
