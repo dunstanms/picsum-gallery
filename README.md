@@ -23,11 +23,11 @@ It contains a search button where one can search for their favourite images
 - Run the application `python manage.py runserver`
 
 ## Technologies Used
-Django 3.2.2
-Python3.8
-Bootstrap3
-Javascript
-CSS
+- Django 3.2.2
+- Python3.8
+- Bootstrap3
+- Javascript
+- CSS
 
 
 
